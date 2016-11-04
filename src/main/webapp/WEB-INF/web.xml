@@ -38,6 +38,7 @@
 
 	<servlet-mapping>
 		<servlet-name>spring</servlet-name>
+		<url-pattern>/api/*</url-pattern>
 		<url-pattern>*.htm</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
