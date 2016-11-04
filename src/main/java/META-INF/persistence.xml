@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="rubiklife">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>com.rubiklife.entities.Address</class>
+		<class>com.rubiklife.entities.AllRetail</class>
+		<class>com.rubiklife.entities.AllergensType</class>
+		<class>com.rubiklife.entities.Anthropometric</class>
+		<class>com.rubiklife.entities.City</class>
+		<class>com.rubiklife.entities.Country</class>
+		<class>com.rubiklife.entities.CulturalCompetency</class>
+		<class>com.rubiklife.entities.CulturalType</class>
+		<class>com.rubiklife.entities.DeviceType</class>
+		<class>com.rubiklife.entities.DietitanLanguage</class>
+		<class>com.rubiklife.entities.Dietitian</class>
+		<class>com.rubiklife.entities.DietitianAllocation</class>
+		<class>com.rubiklife.entities.DietitianBilling</class>
+		<class>com.rubiklife.entities.DietitianEducationCertification</class>
+		<class>com.rubiklife.entities.DietitianEducationG</class>
+		<class>com.rubiklife.entities.DietitianEducationUg</class>
+		<class>com.rubiklife.entities.DietitianExpertise</class>
+		<class>com.rubiklife.entities.DietitianPreference</class>
+		<class>com.rubiklife.entities.DietitianSchedule</class>
+		<class>com.rubiklife.entities.DietitianTimekeeper</class>
+		<class>com.rubiklife.entities.DiseasesMgmt</class>
+		<class>com.rubiklife.entities.HospitalAffiliation</class>
+		<class>com.rubiklife.entities.LabworkBlood</class>
+		<class>com.rubiklife.entities.LabworkUrine</class>
+		<class>com.rubiklife.entities.LifestyleMgmt</class>
+		<class>com.rubiklife.entities.MemDietSuggArticle</class>
+		<class>com.rubiklife.entities.Member</class>
+		<class>com.rubiklife.entities.MemberActviity</class>
+		<class>com.rubiklife.entities.MemberAllergen</class>
+		<class>com.rubiklife.entities.MemberCulturalPref</class>
+		<class>com.rubiklife.entities.MemberDietPref</class>
+		<class>com.rubiklife.entities.MemberDrug</class>
+		<class>com.rubiklife.entities.MemberEatingHabit</class>
+		<class>com.rubiklife.entities.MemberGoal</class>
+		<class>com.rubiklife.entities.MemberMedicalCond</class>
+		<class>com.rubiklife.entities.MemberMedicalCondFly</class>
+		<class>com.rubiklife.entities.MemberReceipeIng</class>
+		<class>com.rubiklife.entities.MemberReceipe</class>
+		<class>com.rubiklife.entities.MemberReceipt</class>
+		<class>com.rubiklife.entities.MemberRetail</class>
+		<class>com.rubiklife.entities.MemberTrackingDevice</class>
+		<class>com.rubiklife.entities.Memberprovider</class>
+
+		<properties>
+			<property name="hibernate.connection.username" value="test" />
+			<property name="hibernate.connection.password" value="admin@123" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/mysitraa" />
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+		</properties>
+		
+		
+	</persistence-unit>
+</persistence>

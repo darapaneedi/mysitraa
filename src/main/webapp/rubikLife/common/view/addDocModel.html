@@ -1,0 +1,44 @@
+<div id="myModal">
+	<div class="modal-header" style="border-bottom: white;">
+		<h4 class="modal-title">Add Doctor Details</h4>
+	</div>
+	<div class="modal-body">
+		<div class="form-group" id="docDetails">
+			<label for="inputName"
+				class="control-label col-xs-12 col-sm-12 col-md-12 col-lg-5">PROVIDER NAME :</label>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+				<input type="text" class="form-control" data-ng-model="providerName" id="providerName" required>
+			</div>
+			<div>&nbsp;</div>
+			<label for="inputName"
+				class="control-label col-xs-12 col-sm-12 col-md-12 col-lg-5">ADDRESS :</label>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+				<input type="text" class="form-control" data-ng-model="address" id="address" required>
+			</div>
+			<div>&nbsp;</div>
+			<label for="inputName"
+				class="control-label col-xs-12 col-sm-12 col-md-12 col-lg-5">SPECIALITY :</label>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+				<input type="text" class="form-control" data-ng-model="speciality" id="speciality" required>
+			</div>
+			<div>&nbsp;</div>
+			<label for="inputName"
+				class="control-label col-xs-12 col-sm-12 col-md-12 col-lg-5">PHONE NUMBER :</label>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+				<input type="text" class="form-control" data-ng-model="phoneNumber" id="phoneNumber" required>
+			</div>
+			<div>&nbsp;</div>
+			<label for="inputName"
+				class="control-label col-xs-12 col-sm-12 col-md-12 col-lg-5">LAST VISIT :</label>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+				<input type="text" class="form-control" data-ng-model="lastVisit" id="lastVisit" required>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer" style="border-top: white;">
+		<div class="col-xs-12 col-lg-12 top-buffer" id="" style="margin-top:10px;">
+			<button type="button" class="btn btn-custom" id="" data-ng-click="addDocDetails()">Add</button>
+			<button type="button" class="btn btn-custom pull-right" id="" data-ng-click="cancel()">Cancel</button>
+		</div>
+	</div>
+</div>
