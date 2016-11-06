@@ -24,19 +24,21 @@
 	<div style="display: table-cell; vertical-align: middle; text-align: center;">
 		<div class="login-01">
 			<div class="one-login">
+				
+				<form class="form" action="authenticate.htm">
 				<div class="one-login-head">
-					<input type="radio" name= "user" value="member" onclick="window.location='http://localhost/Portals/welcome.htm?member=true'"/>Member&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="radio" name= "user" value="dietition" onclick="window.location='http://localhost/Portals/welcome.htm?member=false'"/>Dietitian&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="radio" name= "user" checked="checked" value="member" />Member&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="radio" name= "user" value="dietitian" />Dietitian&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="radio" name= "user" value="register" onclick="window.location='http://localhost/Portals/welcome.htm#/infoForm'"/>Register
 				</div>
-				<form class="form" onsubmit="event.preventDefault();">
 					<ul>
 						<li>
-							<input type="text" name="email" class="text" placeholder="Enter Email Id" tabindex="1" id="email">
+						<input type="text" name="email" class="text" placeholder="Enter Email Id" tabindex="1" id="email">
 						</li>
 					</ul>
+						<span style="color:red">	<%=request.getParameter("error")!=null?request.getParameter("error"):"" %></span>
 					<div class="submit">
-							<input type="submit" onclick="validateForm(document.forms[0])" value="Sign In" tabindex="2">
+							<input type="submit" value="Sign In" tabindex="2">
 					</div>
 				</form>
 			</div>

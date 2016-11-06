@@ -40,6 +40,8 @@ public class Dietitian implements Serializable {
 	@Column(name="last_update")
 	private Timestamp lastUpdate;
 
+	private int points;
+	
 	public Dietitian() {
 	}
 
@@ -105,6 +107,14 @@ public class Dietitian implements Serializable {
 
 	public void setLastUpdate(Timestamp lastUpdate) {
 		this.lastUpdate = lastUpdate;
+	}
+
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
 	}
 
 }

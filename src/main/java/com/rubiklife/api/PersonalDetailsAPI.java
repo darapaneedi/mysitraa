@@ -1,6 +1,7 @@
 package com.rubiklife.api;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
@@ -17,10 +18,14 @@ import com.rubiklife.entities.Address;
 import com.rubiklife.entities.City;
 import com.rubiklife.entities.Country;
 import com.rubiklife.entities.Member;
+import com.rubiklife.entities.MemberHealtGoals;
+import com.rubiklife.entities.MemberHealthStatistics;
+import com.rubiklife.entities.MemberPointsStatistics;
 import com.rubiklife.repositories.AddressRepository;
 import com.rubiklife.repositories.CityRepository;
 import com.rubiklife.repositories.CountryRepository;
 import com.rubiklife.repositories.MemberRepository;
+import com.rubiklife.service.MemberFacade;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -38,16 +43,41 @@ public class PersonalDetailsAPI {
 	@Autowired
 	private CountryRepository countryRepository;
 	
+	@Autowired
+	private MemberFacade memberFacade;
+	
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public MemberBO getLoggedInMember( HttpServletRequest request ){
 		//request.getSession().getAttribute("memberInfo");
-		if(true){
+		if(request.getSession().getAttribute("memberInfo")==null){
 			return new MemberBO(true);
 		}
 		
-		return (MemberBO)request.getSession().getAttribute("memberInfo"); // return from Security context //TODO after login
+		return memberFacade.getMemberBO(((MemberBO)request.getSession().getAttribute("memberInfo")).getMember()); 
 	
+	}
+	
+	@RequestMapping(value="/goals",method = RequestMethod.GET)
+	public List<MemberHealtGoals> getMemberGoals( HttpServletRequest request ){
+		
+		return memberFacade.getMemberGoals(((MemberBO)request.getSession().getAttribute("memberInfo")).getMember()); 
+	
+	}
+	
+	
+
+	@RequestMapping(value="/healthstats",method = RequestMethod.GET)
+	public List<MemberHealthStatistics> getMemberHealthStats( HttpServletRequest request ){
+		
+		return memberFacade.getMemberHealthStats(((MemberBO)request.getSession().getAttribute("memberInfo")).getMember()); 
+	
+	}
+	
+	@RequestMapping(value="/pointsstats",method = RequestMethod.GET)
+	public List<MemberPointsStatistics> getMemberPointsStats( HttpServletRequest request ){
+		
+		return memberFacade.getMemberPointsStats(((MemberBO)request.getSession().getAttribute("memberInfo")).getMember()); 
 	
 	}
 	
@@ -76,16 +106,35 @@ public class PersonalDetailsAPI {
 			
 			Country country = memberBO.getCountry();
 			if(country.getCountry() !=null ){
-				country = countryRepository.findByCountry(country.getCountry());
+				Country countryEN = countryRepository.findByCountry(country.getCountry());
+				if(countryEN==null){
+					countryEN = new Country();
+					countryEN.setCountry(country.getCountry());
+					countryEN = countryRepository.save(countryEN);
+				}
+				
+				country = countryEN ;
+				memberBO.setCountry(countryEN);
 			}
 			
 			City city = memberBO.getCity();
 			if(city.getCity() !=null ){
-				city = cityRepository.findByCity(city.getCity());
+				City cityEN = cityRepository.findByCity(city.getCity());
+				if(cityEN==null){
+					cityEN = new City();
+					cityEN.setCity(city.getCity());
+					city.setCountryId(country.getCountryId());
+					cityEN = cityRepository.save(cityEN);
+				}
+				
+				city = cityEN ;
+				memberBO.setCity(cityEN);
 			}
 			
 			Address address = memberBO.getAddress();
+			address.setCityId(city.getCityId());
 			address = addressRepository.save(address);
+			
 			member.setAddressId(address.getAddressId());
 			
 			memberBO.setMember(memberRepository.save(member));

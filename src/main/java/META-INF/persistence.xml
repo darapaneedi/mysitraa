@@ -46,6 +46,21 @@
 		<class>com.rubiklife.entities.MemberRetail</class>
 		<class>com.rubiklife.entities.MemberTrackingDevice</class>
 		<class>com.rubiklife.entities.Memberprovider</class>
+		<class>com.rubiklife.entities.MemberAppointments</class>
+		<class>com.rubiklife.entities.MemberToDos</class>
+		<class>com.rubiklife.entities.Articles</class>
+		<class>com.rubiklife.entities.MemberDietPlan</class>
+		<class>com.rubiklife.entities.MemberRetailExp</class>
+		<class>com.rubiklife.entities.MemberHealtGoals</class>
+		<class>com.rubiklife.entities.MemberHealthStatistics</class>
+		<class>com.rubiklife.entities.MemberNutritionBreakdown</class>
+		<class>com.rubiklife.entities.MemberProductUses</class>
+		<class>com.rubiklife.entities.DietitianNotes</class>
+		<class>com.rubiklife.entities.MemberPointsStatistics</class>
+		<class>com.rubiklife.entities.MemberDietitian</class>
+		<class>com.rubiklife.entities.DietitianToDos</class>
+		<class>com.rubiklife.entities.Patient</class>
+		<class>com.rubiklife.entities.MemberDietBreakdown</class>
 
 		<properties>
 			<property name="hibernate.connection.username" value="test" />

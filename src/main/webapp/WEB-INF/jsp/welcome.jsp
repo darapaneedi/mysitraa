@@ -88,20 +88,19 @@
                         </p>
                      </li>
                      <li class="dropdown" role="presentation">
-                        <a aria-expanded="false" aria-haspopup="true"
+                        <a aria-expanded="false" aria-haspopup="true" style="pointer: cursor;"
                            class="dropdown-toggle" data-toggle="dropdown"
-                           href="#" id="profile-picture-icon" role=
+                            id="profile-picture-icon" role=
                            "button"><img src=
-                           "<%=contextName %>/rubikLife/images/usernamePic.png">  Mr.David
-                        Cambell  <i aria-hidden="true" class=
+                           "<%=contextName %>/rubikLife/images/usernamePic.png">  Mr. <span id="userNameHeader" ></span>  <i aria-hidden="true" class=
                            "fa fa-caret-down"></i></a>
                         <ul class="dropdown-menu" id="profileDropdown">
                            <li>
-                              <a href=""><i class=
+                              <a  style="pointer: cursor;"><i class=
                                  "fa fa-lock"></i> Edit profile</a>
                            </li>
                            <li>
-                              <a href=""><i class=
+                              <a href="logout.htm"><i class=
                                  "fa fa-sign-out"></i> Sign-out</a>
                            </li>
                         </ul>
@@ -109,7 +108,7 @@
                      <li class="dropdown" role="presentation">
                         <a aria-expanded="false" aria-haspopup="true"
                            class="dropdown-toggle" data-toggle="dropdown"
-                           href="#" id="envlopeAnchor" role="button">
+                            id="envlopeAnchor" role="button">
                            <p>Messages <i aria-hidden="true" class=
                               "fa fa-envelope fa-lg"></i> <span class=
                               "button__badge">4</span></p>
@@ -169,7 +168,7 @@
                         </ul>
                      </li>
                      <li role="presentation">
-                        <a href="#" id="chat-icon" onclick=
+                        <a  id="chat-icon" onclick=
                            "popUFunction()">
                            <!--                    <i class="fa fa-comments-o fa-2x" aria-hidden="true"></i>-->
                            <p>Chat <i aria-hidden="true" class=
@@ -397,5 +396,11 @@
              $("#wrapper").toggleClass("toggled");
          });
       </script> -->
+      
+      <!-- load momentJS (required for angular-moment) -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+<!-- load angular-moment -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
    </body>
 </html>

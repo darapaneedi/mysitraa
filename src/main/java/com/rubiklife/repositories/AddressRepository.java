@@ -6,5 +6,4 @@ import com.rubiklife.entities.Address;
 
 public interface AddressRepository extends CrudRepository<Address, Integer>{
 
-	
 }

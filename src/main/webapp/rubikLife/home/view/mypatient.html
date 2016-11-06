@@ -14,80 +14,24 @@
 					<p>Patient Diseases</p>
 				</li>
 				<li class="col-md-3 text-left">
-					<p>Last Interaction</p>
+					<p>Category</p>
 				</li>
 				<li class="col-md-3 text-left">
 					<p>Appointment Date</p>
 				</li>
 			</ul>
-			<ul class="col-md-12 mydiet_table-records">
+			<ul class="col-md-12 mydiet_table-records" data-ng-repeat="patient in patientLilst | orderBy : 'nextVisit'">
 				<li class="col-md-3 text-left  ">
-					<p>Andrew</p>
+					<p>{{patient.patientName}}</p>
 				</li>
 				<li class="col-md-3 text-left">
-					<p>Diabetes</p>
+					<p>{{patient.disease}}</p>
 				</li>
 				<li class="col-md-3 text-left">
-					<p>20-01-2016</p>
+					<p>{{patient.category}}</p>
 				</li>
 				<li class="col-md-3 text-left">
-					<p>21-03-2016</p>
-				</li>
-			</ul>
-			<ul class="col-md-12 mydiet_table-records">
-				<li class="col-md-3 text-left  ">
-					<p>Paul</p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>Fever</p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>24-09-2016</p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>01-10-2016</p>
-				</li>
-			</ul>
-			<ul class="col-md-12 mydiet_table-records">
-				<li class="col-md-3 text-left  ">
-					<p>Christian</p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>Muscle Pain</p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>01-11-2016</p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>05-11-2016</p>
-				</li>
-			</ul>
-			<ul class="col-md-12 mydiet_table-records">
-				<li class="col-md-3 text-left  ">
-					<p>Modric</p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>Knee bursitis </p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>19-10-2016</p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>19-11-2016</p>
-				</li>
-			</ul>
-			<ul class="col-md-12 mydiet_table-records">
-				<li class="col-md-3 text-left  ">
-					<p>Leon</p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>Hamstring Injury</p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>30-09-2016</p>
-				</li>
-				<li class="col-md-3 text-left">
-					<p>31-12-2016</p>
+					<p>{{patient.nextVisit | date:'dd/MM/yyyy' || 'NA'}}</p>
 				</li>
 			</ul>
 		</div>

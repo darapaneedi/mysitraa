@@ -32,6 +32,8 @@ public class Address implements Serializable {
 	private Timestamp lastUpdate;
 
 	private String phone;
+	
+	private String secondaryphone;
 
 	@Column(name="postal_code")
 	private String postalCode;
@@ -102,5 +104,15 @@ public class Address implements Serializable {
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
+
+	public String getSecondaryphone() {
+		return secondaryphone;
+	}
+
+	public void setSecondaryphone(String secondaryphone) {
+		this.secondaryphone = secondaryphone;
+	}
+	
+	
 
 }

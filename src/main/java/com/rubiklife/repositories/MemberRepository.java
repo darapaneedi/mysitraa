@@ -7,5 +7,7 @@ import com.rubiklife.entities.Member;
 public interface MemberRepository extends CrudRepository<Member, Integer>{
 	
 	
+	Member findByEmail(String email);
+	
 
 }

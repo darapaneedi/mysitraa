@@ -21,6 +21,7 @@ public class Member implements Serializable {
 	private Integer customerId;
 
 	private byte active;
+	private int points;
 
 	@Column(name="address_id")
 	private int addressId;
@@ -55,6 +56,14 @@ public class Member implements Serializable {
 
 	public Integer getCustomerId() {
 		return this.customerId;
+	}
+	
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
 	}
 
 	public void setCustomerId(Integer customerId) {
